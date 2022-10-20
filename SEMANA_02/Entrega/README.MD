@@ -1,9 +1,11 @@
 # Entrega Semana 2
 ## Modelos do Banco de Dados de Curriculo
-### <a href="https://github.com/RafaelTechio/Tutorial_M2/SEMANA_02/Entrega/relacional_conceitual.png">Modelo conceitual</a>
-### <a href="https://github.com/RafaelTechio/Tutorial_M2/SEMANA_02/Entrega/relacional_logico.png">Modelo lógico</a>
+### <a href="https://github.com/RafaelTechio/Tutorial_M2/blob/main/SEMANA_02/Entrega/relacional_conceitual.png">Modelo conceitual</a>
+<img src="https://github.com/RafaelTechio/Tutorial_M2/blob/main/SEMANA_02/Entrega/relacional_conceitual.png"> </img>
+### <a href="https://github.com/RafaelTechio/Tutorial_M2/blob/main/SEMANA_02/Entrega/relacional_logico.png">Modelo lógico</a>
+<img src="https://github.com/RafaelTechio/Tutorial_M2/blob/main/SEMANA_02/Entrega/relacional_logico.png"> </img>
 ### Modelo físico
-`
+
 CREATE TABLE curriculo 
 ( 
  path_foto INT,  
@@ -65,5 +67,4 @@ CREATE TABLE personalidade
  idcurriculo INT,
  FOREIGN KEY (idcurriculo) REFERENCES curriculo(id)
 ); 
-`
 
