@@ -8,7 +8,7 @@
 
 CREATE TABLE curriculo 
 ( 
- path_foto INT,  
+ path_foto VARCHAR(255),  
  nome INT,  
  cargo INT,  
  contato INT,  
