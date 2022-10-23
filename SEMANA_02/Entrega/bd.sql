@@ -1,7 +1,9 @@
 CREATE TABLE curriculo ( path_foto VARCHAR(255),
 nome VARCHAR(50),
 cargo VARCHAR(50),
-contato VARCHAR(50),
+telefone VARCHAR(50),
+endereco VARCHAR(50),
+email VARCHAR(50),
 descricao VARCHAR(255),
 id INT PRIMARY KEY );
 
