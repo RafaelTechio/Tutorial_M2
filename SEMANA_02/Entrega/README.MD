@@ -9,32 +9,32 @@
 CREATE TABLE curriculo 
 ( 
  path_foto VARCHAR(255),  
- nome INT,  
- cargo INT,  
- contato INT,  
- descricao INT,  
+ nome VARCHAR(50),  
+ cargo VARCHAR(50),  
+ contato VARCHAR(50),  
+ descricao VARCHAR(255),  
  id INT PRIMARY KEY
 ); 
 
 CREATE TABLE experiencia 
 ( 
- cargo INT,  
- empresa INT,  
+ cargo VARCHAR(50),  
+ empresa VARCHAR(50),  
  id INT PRIMARY KEY,  
- descricao INT,  
- inicio INT,  
- fim INT,  
+ descricao VARCHAR(255),  
+ inicio DATE,  
+ fim DATE,  
  idcurriculo INT,
  FOREIGN KEY (idcurriculo) REFERENCES curriculo(id) 
 ); 
 
 CREATE TABLE formacao 
 ( 
- curso INT,  
- descricao INT,  
+ curso VARCHAR(50),  
+ descricao VARCHAR(50),  
  id INT PRIMARY KEY,  
- inicio INT,  
- fim INT,  
+ inicio DATE,  
+ fim DATE,  
  idcurriculo INT,  
  FOREIGN KEY (idcurriculo) REFERENCES curriculo(id)
 ); 
@@ -42,15 +42,16 @@ CREATE TABLE formacao
 CREATE TABLE realizacao 
 ( 
  id INT PRIMARY KEY,  
- nome INT,  
- ano INT,  
- descricao INT,  
+ nome VARCHAR(50),  
+ ano DATE,  
+ descricao VARCHAR(255),  
  idcurriculo INT,
  FOREIGN KEY (idcurriculo) REFERENCES curriculo(id)
 ); 
 
 CREATE TABLE habilidade 
 ( 
+ nome VARCHAR(50),
  id INT PRIMARY KEY,  
  atual INT,  
  maxima INT,  
@@ -60,7 +61,7 @@ CREATE TABLE habilidade
 
 CREATE TABLE personalidade 
 ( 
- nome INT,  
+ nome VARCHAR(50),  
  id INT PRIMARY KEY,  
  atual INT,  
  maxima INT,  
