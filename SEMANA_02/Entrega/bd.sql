@@ -16,6 +16,7 @@ fim DATE,
 idcurriculo INT, FOREIGN KEY (idcurriculo) REFERENCES curriculo(id) );
 
 CREATE TABLE formacao ( curso VARCHAR(50),
+instituicao VARCHAR(50),
 descricao VARCHAR(50),
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 inicio DATE,
