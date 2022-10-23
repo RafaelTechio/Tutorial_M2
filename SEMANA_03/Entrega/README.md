@@ -4,6 +4,7 @@ Como a construção do currículo será progredida de semana a semana, criei o b
 ## Rotas
 Como pedido na atividade, criei as rotas necessárias para resgatar as informações do banco de dados que criei. Essas rotas são:
 ### Curriculo
+/curriculo
 Retorna as informações base do curriculo e de todas as outras tabelas criadas, relacionadas com o currículo de ID 1
 ### Habilidades
 /habilidades
