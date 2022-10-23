@@ -13,11 +13,11 @@ Retorna as linhas de habilidades relacionadas com o currículo de ID 1
 /experiencias
 Retorna as linhas de experiências relacionadas com o currículo de ID 1
 ### Formações
-/formações
+/formacoes
 Retorna as linhas de formações relacionadas com o currículo de ID 1
 ### Personalidades
 /personalidades
 Retorna as linhas de personalidades relacionadas com o currículo de ID 1
 ### Realizações
-/realizações
+/realizacoes
 Retorna as linhas de realizações relacionadas com o currículo de ID 1
