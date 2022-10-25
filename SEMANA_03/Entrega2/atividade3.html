@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Atividade 3</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="/atividade3" method="POST">
+            <h1>Temperatura</h1>
+            <div>
+                <label for="valor">Valor</label>
+                <input type="number" name="valor" id="valor" required />
+            </div>
+            <div>
+                <label for="fahrenheit">Celsius para Fahrenheit</label>
+                <input type="radio" name="tipo" id="fahrenheit" value="1" required />
+            </div>
+            <div>
+                <label for="celsius">Fahrenheit para Celsius</label>
+                <input type="radio" name="tipo" id="celsius" value="2" required />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
