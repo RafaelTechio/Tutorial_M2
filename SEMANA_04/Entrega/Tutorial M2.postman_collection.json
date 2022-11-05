@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "15ea3e43-7536-4a62-a0be-02dfa302ecf3",
+		"name": "Tutorial M2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23795448"
+	},
+	"item": [
+		{
+			"name": "Curriculo",
+			"item": [
+				{
+					"name": "Listar Curriculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{prefixURL}}curriculos",
+							"host": [
+								"{{prefixURL}}curriculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Currículo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{prefixURL}}curriculos/1",
+							"host": [
+								"{{prefixURL}}curriculos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Currículo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Rafael 2\",\r\n    \"cargo\": \"Summer Job\",\r\n    \"endereco\": \"Foz do Iguaçu - PR\",\r\n    \"telefone\": \"(45) 99913-2871\",\r\n    \"email\": \"techiorafael@gmail.com\",\r\n    \"descricao\": \"Descrição aqui\",\r\n    \"link_foto\": \"https:foto.com/foto.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{prefixURL}}curriculos",
+							"host": [
+								"{{prefixURL}}curriculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Currículo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Rafael 2\",\r\n    \"cargo\": \"Summer Job\",\r\n    \"endereco\": \"Foz do Iguaçu - PR\",\r\n    \"telefone\": \"(45) 99913-2871\",\r\n    \"email\": \"techiorafael@gmail.com\",\r\n    \"descricao\": \"Descrição aqui\",\r\n    \"link_foto\": \"https:foto.com/foto.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{prefixURL}}curriculos",
+							"host": [
+								"{{prefixURL}}curriculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Currículo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{prefixURL}}curriculos/4",
+							"host": [
+								"{{prefixURL}}curriculos"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

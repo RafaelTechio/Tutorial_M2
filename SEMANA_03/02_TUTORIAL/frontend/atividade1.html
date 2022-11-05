@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>ETAPA 3</title>
+	<link rel="stylesheet" href="style.css" />	
+	<script src="script.js"></script>
+</head>
+<body>
+	<style>
+		html {
+			width: 100vw;
+			height: 100vh;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		form > *{
+			display: block;
+		}
+	</style>
+	<form method="post" action="/exercicio1">
+		<input type="number" name="valor"/>
+		<div>
+			<label for="1">30% do valor</label>
+			<input type="radio" name="descontoAcrescimo" value="1" id="1"/>	
+		</div>
+		<div>
+			<label for="2">Valor com acréscimo de 30%</label>
+			<input type="radio" name="descontoAcrescimo" value="2" id="2"/>	
+		</div>
+		<div>
+			<label for="3">Valor com desconto de 30%</label>
+			<input type="radio" name="descontoAcrescimo" value="3" id="3"/>
+		</div>
+		<button type="submit">Submit</button>
+	</form>	
+</body>
+</html>
