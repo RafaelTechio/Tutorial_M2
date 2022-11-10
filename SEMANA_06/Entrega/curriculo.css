@@ -25,6 +25,8 @@ article{
 
     background-color: #E4DFDA;
 
+    border-radius: 20px;
+
     display: flex;
     justify-content: space-between;
 }
