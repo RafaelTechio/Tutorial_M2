@@ -25,6 +25,8 @@ article{
 
     background-color: #E4DFDA;
 
+    border-radius: 20px;
+
     display: flex;
     justify-content: space-between;
 }
@@ -114,7 +116,7 @@ ul.stylelessList {
 ul.stylelessList > li {
     margin-top: 10px;
 }
-
+/* Tablet */
 @media screen and (max-width: 768px) {
     article{
         flex-direction: column-reverse;
@@ -127,5 +129,11 @@ ul.stylelessList > li {
     .image {
         width: 90%;
         height: 300px;
+    }
+}
+/* Celular */
+@media screen and (max-width: 480px) {
+    .image {
+        height: 280px;
     }
 }
