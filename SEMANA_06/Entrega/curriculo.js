@@ -1,3 +1,4 @@
+// Objeto com as variáveis CSS do tema padrão
 const temaPadrao = {
     body_background_color: '#2A2D43',
     article_background_color: '#E4DFDA',
@@ -10,6 +11,7 @@ const temaPadrao = {
     text_color: 'black'
 }
 
+// Objeto com as variáveis CSS do tema invertido
 const temaInvertido = {
     body_background_color: 'white',
     article_background_color: '#414361',
@@ -22,13 +24,17 @@ const temaInvertido = {
     text_color: 'white'
 }
 
+// Vaiável com o tema atual
 let temaAtual = 'padrao';
 
+// Quando o carregamento estiver concluído
 $(document).ready(() => {
+    // Quando clicar no botão de pdf, redireciona para o pdf em uma nova guia
     $("#downloadCurriculo").click(() => {
         window.open('./Resume-Rafael-Mateus-Zimmer-Techio.pdf', '_blank');
     })
 
+    // Quando clicar no botão de alterar o tema, pega o objeto do root, veririca o tema atual, troca as variáveis de acordo com o objeto e muda o texto do botão com o tema atual.
     $("#changeTema").click(() => {
         const root = $(':root');
 
