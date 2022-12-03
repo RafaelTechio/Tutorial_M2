@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title><%= nome %> - Currículo</title>
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/345/345609.png">
+        <link rel="stylesheet" href="./curriculo.css" type="text/css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./curriculo.js"></script>  <!-- SCRIPT com lógica precisa estar abaixo da importação do jquery para ter acesso as funcionalidades -->
+        <script>
+        </script>
+    <body>
+        <article>
+            <main>
+                <h1><%= nome %></h1>
+                <address><%= endereco %></address>
+                <section>
+                    <h2>Sobre Mim</h2>
+                    <p><%= descricao %></p>
+                </section>
+                <section>
+                    <h2>Experiência</h2>
+                    <% experiencias.map(experiencia => {%>
+                        <div>
+                            <h3><%= experiencia.nome %></h3>
+                                <% experiencia.cargos.map(cargo => { %>
+                                    
+                                <% const dateInicio = new Date(cargo.inicio) %>
+                                <% const dateFim = new Date(cargo.fim) %>
+
+                                <% const stringFim = cargo.fim ? `${dateFim.toLocaleString('default', {month: 'short'})} de ${dateFim.getFullYear()}` : 'o momento' %>
+
+                                <div class="divCargo">
+                                    <h4><%= cargo.cargo %></h4>
+                                    <span class="periodo"><%= dateInicio.toLocaleString('default', {month: 'short'}) %> de <%= dateInicio.getFullYear() %> - <%= stringFim %></span>
+                                    <p><%= cargo.descricao %></p>
+                                </div>
+                            <% }) %>
+                        </div>
+                    <% }) %>
+                </section>
+                <section>
+                    <h2>Formação</h2>
+                    <% formacoes.map(formacao => {%>
+                        <% const dateInicio = new Date(formacao.inicio) %>
+                        <% const dateFim = new Date(formacao.fim) %>
+
+                        <% const stringFim = formacao.fim ? `${dateFim.toLocaleString('default', {month: 'short'})} de ${dateFim.getFullYear()}` : 'o momento' %>
+                        <div>
+                            <h3><%= formacao.instituicao %></h3>
+                            <div>
+                                <h4><%= formacao.curso %></h4>
+                                <span class="periodo"><%= dateInicio.toLocaleString('default', {month: 'short'}) %> de <%= dateInicio.getFullYear() %> - <%= stringFim %></span>
+                                <p><%= formacao.descricao %></p>
+                            </div>
+                        </div>
+                    <% }) %>
+                </section>
+            </main>
+            <aside>
+                <section text="<%=path_foto%>" class="image"></section>
+                <section>
+                    <h2>Contato</h2>
+                    <ul class="stylelessList">
+                        <li>Email <br> <%= email %></li>
+                        <li>Telefone <br> <%= telefone %></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Habilidades</h2>
+                    <ul id="listaHabilidades">
+                        <% habilidades.map(habilidade => {%>
+                            <li><%= habilidade.nome %></li>
+                        <% }) %>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Personalidade</h2>
+                    <ul>
+                        <% personalidades.map(personalidade => {%>
+                            <li><%= personalidade.nome %></li>
+                        <% }) %>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Ações</h2>
+                    <ul class="stylelessList">
+                        <li><button id="downloadCurriculo">PDF currículo</button></li>
+                        <li><button id="changeTema">Tema: Padrão</button></li>
+                    </ul>
+                </section>
+            </aside>
+        </article>
+    </body>
+</html>
