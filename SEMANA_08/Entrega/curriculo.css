@@ -90,7 +90,7 @@ aside > section > ul > li {
     font-size: 0.8rem;
 }
 
-aside > section > ul > li > button {
+aside > section > ul > li > button, aside > section > ul > li > a > button {
     background: linear-gradient(210deg, var(--aside-background-color), var(--body-background-color));
     color: var(--aside-text-color);
     border-radius: 5px;

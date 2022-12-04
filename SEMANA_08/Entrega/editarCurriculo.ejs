@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main/dashboard.css" type="text/css" >
+    <title>Editar Curriculo <%= id %></title>
+</head>
+<body>
+    <form method="post">
+        <a href="/dashboard/all">Ver todos os curriculos</a>
+        <h1>Editar Curriculo <%= id %></h1>
+
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" placeholder="nome" value="<%=nome%>" id="nome">
+        </div>
+        <div>
+            <label for="cargo">Cargo</label>
+            <input type="text" name="cargo" placeholder="cargo" value="<%=cargo%>" id="cargo">
+        </div>
+        <div>
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" placeholder="telefone" value="<%=telefone%>" id="telefone">
+        </div>
+        <div>
+            <label for="endereco">Endereco</label>
+            <input type="text" name="endereco" placeholder="endereco" value="<%=endereco%>" id="endereco">        
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="email" value="<%=email%>" id="email">        
+        </div>
+        <div>
+            <label for="descricao">Descricao</label>
+            <input type="text" name="descricao" placeholder="descricao" value="<%=descricao%>" id="descricao">        
+        </div>
+
+        <div>
+            <label for="path_foto">Link Foto</label>
+            <input type="text" name="path_foto" placeholder="path_foto" value="<%=path_foto%>" id="descricao">        
+        </div>
+
+        
+
+        <div>
+            <label>JSON experiencias <code>[{empresa: '', cargo: '', inicio:'', fim:'', descricao:''}]</code></label>
+            <input type="text" name="experiencias" placeholder="experiencias" value="<%=experiencias%>" id="experiencias">
+        </div>
+
+        <div>
+            <label>JSON formacoes <code>[{instituicao: '', curso: '', inicio:'', fim:'', descricao:''}]</code></label>
+            <input type="text" name="formacoes" placeholder="formacoes" value="<%=formacoes%>" id="formacoes">
+        </div>
+
+        <div>
+            <label>Lista habilidades (ex: item1;item2)</label>
+            <input type="text" name="habilidades" placeholder="habilidades" value="<%=habilidades%>" id="habilidades">
+        </div>
+
+        <div>
+            <label>Lista personalidades (ex: item1;item2)</label>
+            <input type="text" name="personalidades" placeholder="personalidades" value="<%=personalidades%>" id="personalidades">
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

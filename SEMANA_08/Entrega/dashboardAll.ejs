@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main/dashboardAll.css" type="text/css" >
+    <title>Criar novo Curriculo</title>
+</head>
+<body>
+    <a href="/dashboard"><button>Novo Currículo</button></a>
+    <% curriculos.map(curriculo => { %>
+        <article>
+            <a href="/curriculo/<%=curriculo.id%>">
+                <p>Nome: <%=curriculo.nome%></p>
+                <p>Cargo: <%=curriculo.cargo%></p>
+                <p>ID: <%=curriculo.id%></p>
+                <div>
+                    <a href="/dashboard/<%=curriculo.id%>"><button>Editar</button></a>
+                    <a href="/dashboard/<%=curriculo.id%>/delete"><button>Excluir</button></a>
+                </div>
+            </a>
+        </article>
+    <% }) %>
+</body>
+</html>
