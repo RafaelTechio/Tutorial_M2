@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <main>
+        <form class="form1">
+            <h1>Valor Presente e Valor Futuro</h1>
+            <label for="valor">Valor</label>
+            <input type="number" name="valor" id="valor">
+
+            <label for="periodo">Período</label>
+            <input type="number" name="periodo" id="periodo">
+
+            <label for="porcentagem">Porcentagem</label>
+            <input type="number" name="porcentagem" id="porcentagem">
+            
+            <label for="pv">Calcular PV</label>
+            <input type="radio" id="pv" name="tipo" value="calculaPV">
+            <label for="fv">Calcular FV</label>
+            <input type="radio" id="fv" name="tipo" value="calculaFV">
+
+            <button type="submit">Enviar</button>
+            <div class="resposta">
+
+            </div>
+        </form>
+
+        <form class="form2">
+            <h1>Juros Simples</h1>
+            <label for="capital">Capital</label>
+            <input type="number" name="capital" id="capital">
+
+            <label for="periodo">Período</label>
+            <input type="number" name="periodo" id="periodo">
+
+            <label for="taxaJuros">Taxa de Juros</label>
+            <input type="number" name="taxaJuros" id="taxaJuros">
+
+            <button type="submit">Enviar</button>
+            <div class="resposta">
+
+            </div>
+        </form>
+
+        <form class="form3">
+            <h1>Impressão Maluca</h1>
+            <label for="texto">Texto</label>
+            <input type="text" name="texto" id="texto">
+
+            <button type="submit">Enviar</button>
+            <div class="resposta">
+
+            </div>
+        </form>
+
+        <form class="form4">
+            <h1>Conversão decimal - binário</h1>
+            <label for="number">Numero</label>
+            <input type="number" name="number" id="number">
+
+            <button type="submit">Enviar</button>
+            <div class="resposta">
+
+            </div>
+        </form>
+    </main>
+</body>
+</html>
