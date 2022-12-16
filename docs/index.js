@@ -1,84 +1,87 @@
-function calcularExercicio1(){
-    const base =  Number(document.getElementById('base').value);
-    let comeco = Number(document.getElementById('comeco').value);
-    let fim = Number(document.getElementById('fim').value);
-
-    let contas = [];
-
-    if(fim < comeco){
-        for(let i = comeco; i >= fim; i--){
-            contas.push(`${base} x ${i} = ${base * i}`)
-        }
-    }else{
-        for(let i = comeco; i <= fim; i++){
-            contas.push(`${base} x ${i} = ${base * i}`)
-        }
+function atividade1() {
+    const optionSelected = $('input[name=tipo]:checked').val()
+    const value = $(".form1 #valor").val()
+    const periodo = $(".form1 #periodo").val()
+    const porcentagem = $(".form1 #porcentagem").val()
+    const divResposta = $(".form1 .resposta");
+    let resposta;
+    if(optionSelected == 'calculaPV'){
+        resposta = (value / Math.pow((1 + (porcentagem / 100)), periodo)).toFixed(2)
+    } else {
+        resposta = (value * Math.pow((1 + porcentagem / 100), periodo)).toFixed(2);
     }
+
+    divResposta.html(resposta)
+}
+
+function atividade2() {
+    const capital = $('.form2 #capital').val();
+    const periodo = $('.form2 #periodo').val();
+    const taxaJuros = $('.form2 #taxaJuros').val();
+
+    const divResposta = $(".form2 .resposta");
     
-    document.getElementById('resultado').innerHTML = contas.join("<br>")
-
-    return false;
+    divResposta.html(capital * (1 + ((taxaJuros / 100) * periodo)).toFixed(2))
 }
 
-function calcularExercicio2(){
-    const base =  String(document.getElementById('base').value);
-    
-    const divResultado = document.getElementById('resultado');
+function atividade3() {
+    const texto = $('.form3 #texto').val();
 
-    if(!base || base.length == 1){
-        divResultado.innerHTML = 'Número possui um único ou nenhum dígito'
-    }else{
-        const numeroNormal = Number(base);
-        const numeroInvertido = Number(base.split('').reverse().join(""));
+    const divResposta = $(".form3 .resposta");
 
-        if(numeroInvertido == numeroNormal){
-            divResultado.innerHTML = "O número é palíndromo";
-        }else{
-            divResultado.innerHTML = "O número não é palíndromo";
+    divResposta.html(texto.split('').map((letter, index) => {
+        let spaces = "";
+        for(let i = 0; i<index; i++){
+            spaces = spaces.concat("&nbsp;&nbsp;");
+        }
+
+        return `${spaces}${letter}<br>`
+    }).join(""))
+
+}
+
+function atividade4() {
+    let number = Number($('.form4 #number').val());
+    const divResposta = $(".form4 .resposta");
+
+    let binario = "";
+    let currentBase = Math.pow(2, 100);
+    for(currentBase; currentBase >= 1; currentBase = currentBase / 2){
+        if(number >= currentBase){
+            binario = `${binario}1`;
+            number = number - currentBase;
+        }else {
+            if(binario.length>=1){
+                binario = `${binario}0`;
+            }
         }
     }
 
-    return false;
+    divResposta.html(binario);
+
 }
 
-function calcularExercicio3(){
-    const base =  Number(document.getElementById('base').value);
-
-    let numeros = [];
-
-    for(let i = 1; i < base; i++) {
-        numeros.push(i);
-
-        if(i % 3 == 0){
-            numeros.push('PI');
+$(document).ready(() => {
+    $("button").click(function (event) {
+        event.preventDefault()
+        const className = $(this).parent().attr('class');
+        const number = className[className.length - 1]
+        
+        switch(number) {
+            case '1':
+                atividade1()
+                break;
+            case '2':
+                atividade2()
+                break;
+            case '3':
+                atividade3()
+                break;
+            case '4':
+                atividade4()
+                break;
         }
-    }
-
-    document.getElementById('resultado').innerHTML = numeros.join(" - ")
-
-    return false;
-}
 
 
-function calcularExercicio4(){
-    const alturaAzulejo =  Number(document.getElementById('AlturaAzulejo').value);
-    const larguraAzulejo =  Number(document.getElementById('LarguraAzulejo').value);
-    const alturaParede =  Number(document.getElementById('AlturaParede').value);
-    const larguraParede =  Number(document.getElementById('LarguraParede').value);
-
-    const areaAzulejo = alturaAzulejo * larguraAzulejo;
-    const areaParede = alturaParede * larguraParede;
-
-    let numeroAzulejos = areaParede / areaAzulejo;
-
-    numeroAzulejos += numeroAzulejos * 0.05;
-    numeroAzulejos = Math.ceil(numeroAzulejos)
-
-    document.getElementById('resultado').innerHTML = `
-        Área da parede: ${areaParede} cm<br>
-        Área do azulejo: ${areaAzulejo} cm<br>
-        Quantidade necessária + 5%: ${numeroAzulejos}<br>
-    `
-
-    return false;
-}
+    })
+})
